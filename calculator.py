@@ -12,5 +12,5 @@ def divide(a, b):
         raise ValueError("Cannot divide by zero.")
     return a / b
 
-def is_even(n):
-    return n % 2 == 0
+def square_root(n):
+    return n** 0.5

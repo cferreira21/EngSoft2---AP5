@@ -1,22 +1,27 @@
 from calculator import *
 
-def test_add(self):
-    self.assertEqual(add(2, 3), 5)
-    self.assertEqual(add(-1, 1), 0)
+def test_add():
+    assert add(2, 3) == 5
+    assert add(-1, 1) == 0
 
-def test_subtract(self):
-    self.assertEqual(subtract(10, 5), 5)
-    self.assertEqual(subtract(3, 7), -4)
 
-def test_multiply(self):
-    self.assertEqual(multiply(3, 4), 12)
-    self.assertEqual(multiply(-2, 3), -6)
+def test_subtract():
+    assert subtract(10, 5) == 5
+    assert subtract(3, 7) == -4
 
-def test_divide(self):
-    self.assertEqual(divide(10, 2), 5)
-    with self.assertRaises(ValueError):
+
+def test_multiply():
+    assert multiply(3, 4) == 12
+    assert multiply(-2, 3) == -6
+
+
+def test_divide():
+    assert divide(10, 2) == 5
+    try:
         divide(10, 0)
+    except ValueError as e:
+        assert str(e) == "Cannot divide by zero."
 
-def test_is_even(self):
-    self.assertTrue(is_even(4))
-    self.assertFalse(is_even(5))
+def test_square_root():
+    assert square_root(9) == 3
+    assert square_root(16) == 4
